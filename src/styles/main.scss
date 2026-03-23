@@ -208,6 +208,10 @@ button {
   mask-repeat: no-repeat;
   -webkit-mask-size: 18px 18px;
   mask-size: 18px 18px;
+  transition:
+    background-color var(--transition-duration) ease,
+    transform var(--transition-duration) ease,
+    opacity var(--transition-duration) ease;
 }
 
 .icon--menu {
@@ -264,11 +268,18 @@ button {
 
   opacity: 0;
 
-  transition: opacity var(--transition-duration) ease;
+  transition:
+    color var(--transition-duration) ease,
+    opacity var(--transition-duration) ease;
 }
 
 .header__call:hover::before {
+  color: var(--color-text-hover);
   opacity: 1;
+}
+
+.header__call:hover .icon--phone {
+  background-color: var(--color-text-hover);
 }
 
 .header__title {
