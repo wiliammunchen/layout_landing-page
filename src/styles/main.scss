@@ -153,7 +153,7 @@ button {
 }
 
 .header {
-  background-image: url('../images/Cover_photo.png');
+  background-image: url('../images/Cover_photo.jpg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -194,7 +194,7 @@ button {
 }
 
 .icon--phone {
-  background-color: var(--color-menu-text);
+  background-color: var(--color-text);
   background-image: none;
   background-repeat: no-repeat;
   background-position: center;
@@ -290,7 +290,7 @@ button {
   font-size: 36px;
   font-weight: 700;
   line-height: 1;
-  color: var(--color-menu-text);
+  color: var(--color-text);
   text-align: center;
   text-wrap: balance;
   letter-spacing: -1.5px;
@@ -468,11 +468,11 @@ button {
 }
 
 .details__photos--wide-left {
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .details__photos--wide-right {
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .details__photo-link {
@@ -496,16 +496,8 @@ button {
   transition: transform var(--transition-duration) ease;
 }
 
-.details__photo--rotated {
-  transform: rotate(180deg);
-}
-
 .details__photo-link:hover .details__photo {
   transform: scale(1.12);
-}
-
-.details__photo-link:hover .details__photo--rotated {
-  transform: rotate(180deg) scale(1.12);
 }
 
 .details__title {
@@ -676,7 +668,7 @@ button {
   height: 200px;
   padding-bottom: 22px;
 
-  background-image: url('../images/footer.png');
+  background-image: url('../images/footer.jpg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -710,6 +702,12 @@ button {
 
   .details__photos {
     gap: 16px;
+  }
+}
+
+@media (max-width: 320px) {
+  .header {
+    background-position: 72% center;
   }
 }
 
@@ -749,14 +747,26 @@ button {
     gap: 24px;
   }
 
+  .details__photos--wide-left {
+    grid-template-columns: 2fr 1fr;
+  }
+
+  .details__photos--wide-right {
+    grid-template-columns: 1fr 2fr;
+  }
+
   .details__photo-link {
     aspect-ratio: auto;
     height: 320px;
   }
 
   .compare__list {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 48px 24px;
+    grid-template-columns: 1fr;
+    gap: 56px;
+  }
+
+  .place {
+    max-width: 392px;
   }
 
   .contact-us__content {
